@@ -1,0 +1,108 @@
+.mobile-menu {
+    position: fixed;
+    /* inset: 0; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 72px 16px 40px;
+    transform: translateX(100%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    background-color: rgb(var(--cl-white));
+    transition: var(--fast-trns);
+    transition-property: transform;
+}
+
+.mobile-menu.is-open {
+    transform: translateX(0);
+}
+
+.mobile-menu-btn {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 28px;
+    height: 28px;
+}
+
+@media only screen and (min-width: 768px) {
+    :where(.header) .mobile-menu-btn {
+        display: none;
+    }
+}
+
+:where(.mobile-menu) .mobile-menu-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    color: rgb(var(--cl-dark));
+    border: 1px solid rgb(var(--cl-primary) / 10%);
+    border-radius: 50%;
+}
+
+:where(.mobile-menu) .mobile-menu-btn-icon {
+    width: 10px;
+    height: 10px;
+    stroke: currentColor;
+}
+
+.mobile-menu-nav {
+    margin-bottom: auto;
+}
+
+.mobile-menu-nav-item:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+.mobile-menu-nav-link {
+    color: var(--navy-blue, #2e2f42);
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    /* 111.111% */
+    letter-spacing: 0.72px;
+}
+
+.mobile-menu-nav-link.active {
+    color: var(--ocean, #404bbf);
+}
+
+.mobile-menu-address {}
+
+.mobile-menu-address-item:not(:last-child) {
+    margin-bottom: 24px;
+}
+
+.mobile-menu-address-link {
+    color: var(--slate, #434455);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    /* 120% */
+    letter-spacing: 0.4px;
+}
+
+.mobile-menu-address-link.accent {
+    color: var(--iris, #4d5ae5);
+}
+
+:where(.mobile-menu) .socials {
+    --cl-icon: var(--white);
+    --cl-icon-hover: var(--accent);
+}
+
+:where(.mobile-menu) .socials-link {
+    background-color: rgba(77, 90, 229, 1);
+    border-radius: 50%;
+}
