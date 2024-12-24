@@ -20,14 +20,13 @@ body.modal-open {
 
 ul,
 ol {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+  list-style: none;
 }
 
 a {
+  display: inline-block;
   text-decoration: none;
-  color: currentColor;
+  color: inherit;
 }
 
 button {
@@ -45,14 +44,24 @@ address {
   font-style: normal;
 }
 
+.hide {
+  display: none;
+}
+
+.section {
+  padding: 96px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .section {
+    padding: 120px 0;
+  }
+}
+
 .container {
   max-width: 320px;
   margin: 0 auto;
   padding: 0 16px;
-}
-
-.hide {
-  display: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -66,4 +75,9 @@ address {
     max-width: 1158px;
     padding: 0 15px;
   }
+}
+
+.socials-list {
+  display: flex;
+  justify-content: space-between;
 }
