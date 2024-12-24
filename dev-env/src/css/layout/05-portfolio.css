@@ -1,7 +1,6 @@
-.section-portfolio {
-    padding-top: 120px;
-    padding-bottom: 120px;
-}
+.section-portfolio {}
+
+.container-portfolio {}
 
 .section-portfolio-title {
     font-family: var(--font-family);
@@ -12,31 +11,30 @@
     text-align: center;
     text-transform: capitalize;
     color: var(--navy-blue);
-    margin-bottom: 72px;
 }
 
 .section-portfolio-list {
     display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    row-gap: 48px;
     flex-direction: column;
+    gap: 48px;
 }
 
 @media only screen and (min-width: 768px) {
     .section-portfolio-list {
         flex-direction: row;
+        flex-wrap: wrap;
+        gap: 72px 24px;
     }
 }
 
 @media only screen and (min-width: 1158px) {
     .section-portfolio-list {
-        flex-direction: row;
+        gap: 48px 24px;
     }
 }
 
 .section-portfolio-item {
-    width: 100%;
+    cursor: pointer;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -48,13 +46,13 @@
 
 @media only screen and (min-width: 768px) {
     .section-portfolio-item {
-        width: calc((100% - 24px * 2) / 2);
+        width: calc((100% - 24px) / 2);
     }
 }
 
 @media only screen and (min-width: 1158px) {
     .section-portfolio-item {
-        width: calc((100% - 24px * 2) / 3);
+        width: calc((100% - 48px) / 3);
     }
 }
 
@@ -62,7 +60,24 @@
     transform: translateY(0%);
 }
 
-.section-portfolio-img {}
+.section-portfolio-box {
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+    .section-portfolio-box {
+        height: 300px;
+    }
+}
+
+.section-portfolio-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
 
 .section-portfolio-pretext {
     position: absolute;
@@ -73,18 +88,18 @@
     color: var(--cloud);
     padding: 40px 32px;
     background-color: var(--iris);
-    height: 100%;
-    width: 100%;
+    height: 300px;
     transform: translateY(100%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
 .section-portfolio-desc {
-    border-bottom: 1px solid var(--cornflower);
-    border-left: 1px solid var(--cornflower);
-    border-right: 1px solid var(--cornflower);
+    display: flex;
+    flex-direction: column;
     padding: 32px 16px;
+    border: 1px solid var(--cl-cornflower);
+    border-top: none;
 }
 
 .section-portfolio-name {
